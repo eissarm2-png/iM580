@@ -1,0 +1,196 @@
+{
+  "app_name": "Abqour",
+  "personality": "4 Tactile / Playful with 7 Dark-First Utility coloring",
+  "personality_one_liner": "A premium, vibrant, and tactile Arabic gaming experience that balances luxurious dark modes with playful, rounded interfaces.",
+  "color": {
+    "light": {
+      "surface": "#F8F8FA",
+      "onSurface": "#0B0B14",
+      "surfaceSecondary": "#FFFFFF",
+      "onSurfaceSecondary": "#2D2D3A",
+      "surfaceTertiary": "#F0F0F5",
+      "onSurfaceTertiary": "#4A4A5E",
+      "surfaceInverse": "#0B0B14",
+      "onSurfaceInverse": "#FFFFFF",
+      "brand": "#8B5CF6",
+      "brandPrimary": "#8B5CF6",
+      "onBrandPrimary": "#FFFFFF",
+      "brandSecondary": "#FBBF24",
+      "onBrandSecondary": "#0B0B14",
+      "brandTertiary": "#EDE9FE",
+      "onBrandTertiary": "#5B21B6",
+      "success": "#10B981",
+      "onSuccess": "#FFFFFF",
+      "warning": "#F5B301",
+      "onWarning": "#0B0B14",
+      "error": "#EF4444",
+      "onError": "#FFFFFF",
+      "info": "#3B82F6",
+      "onInfo": "#FFFFFF",
+      "border": "#E5E7EB",
+      "borderStrong": "#D1D5DB",
+      "divider": "#F3F4F6"
+    },
+    "dark": {
+      "surface": "#0B0B14",
+      "onSurface": "#FFFFFF",
+      "surfaceSecondary": "#161625",
+      "onSurfaceSecondary": "#F3F4F6",
+      "surfaceTertiary": "#1F1F33",
+      "onSurfaceTertiary": "#D1D5DB",
+      "surfaceInverse": "#FFFFFF",
+      "onSurfaceInverse": "#0B0B14",
+      "brand": "#7C5CFF",
+      "brandPrimary": "#7C5CFF",
+      "onBrandPrimary": "#FFFFFF",
+      "brandSecondary": "#F5B301",
+      "onBrandSecondary": "#0B0B14",
+      "brandTertiary": "#2E225C",
+      "onBrandTertiary": "#C4B5FD",
+      "success": "#10B981",
+      "onSuccess": "#FFFFFF",
+      "warning": "#F5B301",
+      "onWarning": "#0B0B14",
+      "error": "#EF4444",
+      "onError": "#FFFFFF",
+      "info": "#3B82F6",
+      "onInfo": "#FFFFFF",
+      "border": "#2D2D42",
+      "borderStrong": "#3F3F5A",
+      "divider": "#1F1F33"
+    }
+  },
+  "typography": {
+    "displayFontFamily": "Tajawal",
+    "textFontFamily": "Tajawal",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous spacing. Use safe area insets. Maintain RTL layouts: right-aligned text, left-aligned chevrons.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "pill": 999
+  },
+  "shadow_tier": "2",
+  "navigation": "bottom_tabs",
+  "icon_set": "Feather",
+  "glassmorphism": {
+    "enabled": "true",
+    "do's": [
+      "Use blur on bottom tab bar.",
+      "Use translucent purple gradients overlaid on game cards.",
+      "Apply glass effects on the sticky header for smooth scrolling."
+    ],
+    "dont's": [
+      "Don't blur dense data text areas.",
+      "Don't use glass on solid primary buttons."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-blur",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Home",
+      "purpose": "Main dashboard for game discovery, featuring hero banner, stats, and game categories.",
+      "states": {
+        "loading": "Shimmer effect on game cards and hero banner.",
+        "empty": "No games found illustration.",
+        "error": "Failed to load games, Retry button."
+      },
+      "layout": "RTL orientation. Header: Avatar top-right, notifications and coins top-left. Search bar with embedded 'اللعب مع الأصدقاء' (Play with friends) pill. Hero Card: Purple gradient with reading brain mascot on the left (RTL mirrored). Horizontal stats strip (rating, users, games, rank). Featured Game Cards (vertical list): Each with a themed gradient (Quiz=Orange/Red, Puzzle=Purple/Pink, Word=Teal/Green). Horizontal carousel for 'Upcoming Games' with dark cards and Gold 'قريبًا' badges. Footer text: 'تم تطوير هذا التطبيق بواسطة أبو خلف'."
+    },
+    {
+      "name": "GameDetail",
+      "purpose": "Showcase game description, user's current level, and a sticky 'ابدأ اللعب' (Start Play) CTA.",
+      "states": {
+        "loading": "Spinner centered.",
+        "empty": "N/A",
+        "error": "Unable to load game details."
+      },
+      "layout": "Large hero image/gradient top. Details section below with right-aligned text. Sticky gold CTA at the bottom inside safe area."
+    },
+    {
+      "name": "QuizPlay",
+      "purpose": "Active gameplay screen for trivia.",
+      "states": {
+        "loading": "Loading questions...",
+        "empty": "No questions available.",
+        "error": "Failed to connect to game server."
+      },
+      "layout": "Timer progress bar at top. Large question text in the center. 4 large rounded option buttons below. Haptic feedback on selection."
+    },
+    {
+      "name": "MultiplayerLobby",
+      "purpose": "Create or join rooms to play with friends.",
+      "states": {
+        "loading": "Connecting to lobby...",
+        "empty": "No active rooms. Create one!",
+        "error": "Connection lost."
+      },
+      "layout": "List of available rooms. 'Create Room' prominent primary button. Player avatars in waiting state."
+    }
+  ],
+  "images": {
+    "hero_mascot": {
+      "url": "https://images.unsplash.com/photo-1644648479153-2a3dbee76212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYnJhaW4lMjBpbGx1c3RyYXRpb258ZW58MHx8fHwxNzg3MDA4NTgxfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Cute brain illustration"
+    },
+    "quiz_game_bg": {
+      "url": "https://images.unsplash.com/photo-1546443046-ed1ce6ffd1ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHxxdWl6JTIwbmVvbnxlbnwwfHx8fDE3ODcwMDg1ODF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Neon Game On sign for Quiz game"
+    },
+    "puzzle_game_bg": {
+      "url": "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxwdXp6bGUlMjBwaWVjZXMlMjAzZHxlbnwwfHx8fDE3ODcwMDg1ODF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "3D Puzzle piece"
+    },
+    "word_game_bg": {
+      "url": "https://images.unsplash.com/photo-1603224288850-cf0a7939278c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwxfHxhcmFiaWMlMjBsZXR0ZXJzJTIwdHlwb2dyYXBoeXxlbnwwfHx8fDE3ODcwMDg1ODF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Arabic typography"
+    }
+  },
+  "haptics": {
+    "primary_button_press": "impactLight",
+    "game_card_tap": "impactLight",
+    "tab_change": "selection",
+    "answer_correct": "notificationSuccess",
+    "answer_wrong": "notificationError"
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: The entire app must be RTL (Right-to-Left) for Arabic. Use I18nManager.forceRTL(true) or handle flex-direction: 'row-reverse' / appropriate layout mirroring. Text should be right-aligned.",
+    "Use 'Tajawal' font for all text to ensure elegant Arabic typography.",
+    "Implement both Dark Mode and Light Mode, with Dark Mode as the default/primary aesthetic using the deep navy (#0B0B14) and purple (#7C5CFF) tokens.",
+    "Hero card should have a rich purple gradient background with the brain mascot image placed on the left side (due to RTL reading flow, text goes on the right).",
+    "Use a vibrant gold/amber (#F5B301) for primary Call-to-Action buttons ('ابدأ اللعب') and 'قريبًا' (Coming Soon) badges.",
+    "Ensure the bottom tab bar has 5 items: الرئيسية (Home), الألعاب (Games), التصنيف (Leaderboard), الإنجازات (Achievements), الملف الشخصي (Profile). Selected state should use purple with an underline indicator.",
+    "Add a fixed footer at the bottom of the home screen content with the text: 'تم تطوير هذا التطبيق بواسطة أبو خلف'.",
+    "The search bar must include a purple embedded pill for 'اللعب مع الأصدقاء' (Play with friends).",
+    "Featured game cards must use thematic gradients: Quiz (Orange/Red), Puzzle (Purple/Pink), Word (Teal/Green).",
+    "Do NOT use standard blue colors unless requested; stick strictly to the user-provided Purple/Navy/Gold palette."
+  ]
+}
